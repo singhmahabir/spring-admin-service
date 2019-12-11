@@ -1,0 +1,29 @@
+# If you want to consumed Actuator restricted command but upto 1.x.x actuator version 
+#management:
+#  security:
+#    enabled: false
+# From 2.x.x you need to use below properties to enable restricted endpoints of actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+#spring.security.user.name=admin
+#spring.security.user.password=admin-password
+#basic auth creddentials
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+
+# info property details shows in actuators info url http://localhost:8760/actuator/info
+info:
+  name: '@project.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
+  id: reg
+  artifactId: '@project.artifactId@'
+  packaging: '@project.packaging@'
+  groupId: '@project.groupId@'
